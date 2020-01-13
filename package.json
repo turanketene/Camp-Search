@@ -1,0 +1,28 @@
+{
+  "name": "auto-guru",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/turanketene/Auto-Guru.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/turanketene/Auto-Guru/issues"
+  },
+  "homepage": "https://github.com/turanketene/Auto-Guru#readme",
+  "dependencies": {
+    "axios": "^0.19.1",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.8.7",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-router-dom": "^5.1.2"
+  }
+}
