@@ -1,30 +1,25 @@
-// Declaring Dependencies
+const db = require("./db/models")
 const express = require("express");
-const app = express();
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
-const apiRoutes = require("./routes/index");
+const routes = require("./routes");
+
 const PORT = process.env.PORT || 3001;
-// Middleware
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-// Setting up build file as the static(for heroku)
+const app = express();
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Serve up static assets
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
+  app.use(express.static("client/build"));
 }
-// Defining API routes
-app.use("/api", apiRoutes);
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+
+// Define API routes
+app.use(routes)
+
+// Starts the server to begin listening and sync sequelize models
+// =============================================================
+db.sequelize.sync().then(() => {
+  app.listen(PORT, function () {
+    console.log(`App listening on PORT ${PORT}`);
   });
-  
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/favoritecars");
-app.listen(PORT, function() {
-    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-  });
-  
-  // API Key: QSbmSOpWByXGw6PBBUy4wa7HS7EpN8EQ
+})
