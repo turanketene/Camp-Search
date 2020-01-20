@@ -8,6 +8,11 @@ import Footer from "./components/Footer"
 // import NoMatch from "./pages/NoMatch";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
+<<<<<<< HEAD
+import Trips from "./pages/Trips";
+
+=======
+>>>>>>> master
 
 class App extends Component {
 
@@ -43,9 +48,16 @@ class App extends Component {
           <Navbar isLoggedIn={this.state.isLoggedIn} handleLogin={this.handleLogin} />
           <Header handleCampgrounds={this.handleCampgrounds} handleLoading={this.handleLoading} />
           <Wrapper>
+<<<<<<< HEAD
+            <Route path="/" render={props => <Home {...props} campgrounds={this.state.campgrounds} loading={this.state.loading} />} />
+            <Route path="/favorites" component={Favorites} />
+            <Route path="/trips" component={Trips}  />
+            {/* <Route path="/noMatch" component={NoMatch} /> */}
+=======
             <Route path="/" render={props => 
               <Home {...props} campgrounds={this.state.campgrounds} loading={this.state.loading} />} />
             <Route path="/favorites" component={Favorites} />
+>>>>>>> master
           </Wrapper>
           <Footer />
         </div>
