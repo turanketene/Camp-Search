@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import Cards from "../../components/Cards"
 import Container from '@material-ui/core/Container';
 import CircularProgress from '@material-ui/core/CircularProgress';
+<<<<<<< HEAD
 
 const title = {
     textAlign: "center",
@@ -50,3 +51,5 @@ class Favorites extends React.Component {
 
 
 export default Favorites;
+=======
+>>>>>>> master
