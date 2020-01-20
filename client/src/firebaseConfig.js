@@ -1,11 +1,9 @@
 const config = {
-    apiKey: "AIzaSyCMS2aKWCzeYoOQ32IRncXYNo139cEYS8o",
-    authDomain: "campsearch-3f400.firebaseapp.com",
-    databaseURL: "https://campsearch-3f400.firebaseio.com",
-    projectId: "campsearch-3f400",
-    storageBucket: "campsearch-3f400.appspot.com",
-    messagingSenderId: "406169783106",
-    appId: "1:406169783106:web:08913bc09d6045158d96db",
-    measurementId: "G-SFW2XRVHGS"
-  };
-  export default config;
+    apiKey: "AIzaSyCXpi_aBcUODwqgVEENc4EXGJ8H44-igPE",
+    authDomain: "campmom-b95e0.firebaseapp.com",
+    databaseURL: "https://campmom-b95e0.firebaseio.com",
+    projectId: "campmom-b95e0",
+    storageBucket: "campmom-b95e0.appspot.com",
+    messagingSenderId: "443742210904",
+};
+export default config;

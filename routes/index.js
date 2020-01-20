@@ -1,15 +1,8 @@
-const express = require('express');
-const router = express.Router();
+const path = require("path");
+const router = require("express").Router();
+const apiRoutes = require("./api");
 
-const booksController = require("../controllers/booksController");
-
-router.route("/books")
-    .get(booksController.findAll)
-    .post(booksController.save)
-
-router.route("/books/:id")
-    .get(booksController.findById)
-    .put(booksController.update)
-    .delete(booksController.remove)
+// API Routes
+router.use("/api", apiRoutes);
 
 module.exports = router;

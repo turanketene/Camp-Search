@@ -4,7 +4,7 @@
     /* left: 0; */
     /* bottom: -100px; */
     width: 100%;
-    background-color: #e78711;
+    background-color: #225c5e;
     color: white;
     text-align: center;
     /* flex-shrink: 0; */
@@ -28,7 +28,7 @@
     width: 100%;
     /* right: 0; */
     padding: 3px;
-    background-color: #e78711;
+    background-color: #2d5959;
     filter: brightness(75%);
     font-family: "Roboto, sans-serif";
   }
