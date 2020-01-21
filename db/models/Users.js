@@ -25,12 +25,6 @@ module.exports= function(sequelize, DataTypes) {
         //     allowNull: true
         // }
     });
-    User.associate = function(models) {
-
-        User.hasMany(models.Trips, {
-        });
-
-    };
 
     return User;
 }
