@@ -5,7 +5,6 @@ const favoritesController = require("../../controllers/favoritesControllers");
 
 router
   .route("")
-
   .get(favoritesController.findAll)
   .post(favoritesController.create);
 
