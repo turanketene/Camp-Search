@@ -1,2 +1,6 @@
-DROP DATABASE IF EXISTS campmom_db;
-CREATE DATABASE campmom_db;
+
+
+  
+DROP DATABASE IF EXISTS campsearch_db;
+CREATE DATABASE campsearch_db;
+

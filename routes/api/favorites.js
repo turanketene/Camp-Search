@@ -2,7 +2,10 @@ const router = require("express").Router();
 const favoritesController = require("../../controllers/favoritesControllers");
 
 // Matches with "/api/favorites"
-router.route("")
+
+router
+  .route("")
+
   .get(favoritesController.findAll)
   .post(favoritesController.create);
 

@@ -1,10 +1,6 @@
 import axios from "axios";
 
-/**
- * Get the campgrounds by id.
- * 
- * A comma delimited list of park codes (each 4-10 characters in length).
- */
+// Getting the campgrounds by their ID
 function getCampgroundById(parkCode) {
     return axios
         .get(`https://developer.nps.gov/api/v1/campgrounds?parkCode=${parkCode}&api_key=O4VdhmolNStlPLj2bo2DfPKWks3F8J9xfihpGqTf`)
@@ -52,4 +48,8 @@ export default {
             return Promise.all(campgroundPromises)
         })
     }
+
 };
+
+};
+
