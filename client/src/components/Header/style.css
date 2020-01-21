@@ -1,5 +1,5 @@
 #j-container {
-    background-image: url("https://images.wallpaperscraft.com/image/bonfire_fire_camping_121785_2560x1080.jpg");
+    background-image: url("https://images3.alphacoders.com/151/151005.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     display: flex;
@@ -25,14 +25,16 @@
 }
 
 .MuiFormLabel-root {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 input#react-autosuggest-simple {
-    color: white !important;
+    color: rgb(0, 0, 0) !important;
+    font-size: 25px;
 }
 label.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated {
-    color: white;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
 }
 
 .MuiInput-underline:before {
