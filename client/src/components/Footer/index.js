@@ -6,8 +6,7 @@ function Footer() {
 
     return (
         <footer className="footer">
-            <img id="logo" src={logo} alt="CampMom" />
-            <span>Camp.Mom 2019</span>
+            <span>Camp Search 2020</span>
         </footer>
     );
 }

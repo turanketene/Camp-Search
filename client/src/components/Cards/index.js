@@ -8,7 +8,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Maps from '../Maps';
 import MyModal from "../Modal"
-import TripModal from "../TripModal"
 import API from '../../utils/API'
 
 const useStyles = makeStyles(theme => ({
@@ -87,7 +86,6 @@ function MapCard(props) {
                                         {favorites.map(favorite => favorite.campgroundId).includes(campground.id) ? "star" : "star_border"}
                                     </i>
                                     <MyModal campground={campground} />
-                                    <TripModal />
                                 </CardActions>
                             </Card>
                         </Grid>

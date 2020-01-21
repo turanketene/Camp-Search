@@ -83,7 +83,7 @@ function Navbar(props) {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="h6" className={classes.title}>
-                            <a style={{ color: "white", textDecoration: "none" }} href="/">Camp.Mom</a>
+                            <a style={{ color: "white", textDecoration: "none" }} href="/">Camp Search</a>
                         </Typography>
                         <Login isLoggedIn={props.isLoggedIn} handleLogin={props.handleLogin} />
                     </Toolbar>
