@@ -15,12 +15,6 @@
     align-self: flex-end;
 }
 
-.footer #logo {
-  width: 100px;
-  padding: 10px;
-  text-align: center;
-  align-self: center;
-}
   
   .footer span {
     /* bottom: 0; */
@@ -29,6 +23,5 @@
     /* right: 0; */
     padding: 3px;
     background-color: #2d5959;
-    filter: brightness(75%);
     font-family: "Roboto, sans-serif";
   }
