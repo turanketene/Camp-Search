@@ -18,7 +18,7 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
     toolbar: {
-        background: "#225c5e",
+        background: "#b67e29",
     },
     root: {
         flexGrow: 1,
@@ -109,9 +109,6 @@ function Navbar(props) {
                         </ListItem>
                         <ListItem button key="Favorites">
                             <Link href="/favorites" style={{ textDecoration: "none", color: "black" }}>Favorites</Link>
-                        </ListItem>
-                        <ListItem button key="Trips">
-                            <Link href="/trips" style={{ textDecoration: "none", color: "black" }}>Trips</Link>
                         </ListItem>
                     </List>
                 </Drawer>
