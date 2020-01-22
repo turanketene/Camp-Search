@@ -51,6 +51,16 @@ namespace grpc_core {
 // child LB policy and config to use.
 class ResolvingLoadBalancingPolicy : public LoadBalancingPolicy {
  public:
+  // If error is set when this returns, then construction failed, and
+  // the caller may not use the new object.
+  ResolvingLoadBalancingPolicy(
+      Args args, TraceFlag* tracer, UniquePtr<char> target_uri,
+      UniquePtr<char> child_policy_name,
+      RefCountedPtr<LoadBalancingPolicy::Config> child_lb_config,
+      grpc_error** error);
+
+  // Private ctor, to be used by client_channel only!
+  //
   // Synchronous callback that takes the resolver result and sets
   // lb_policy_name and lb_policy_config to point to the right data.
   // Returns true if the service config has changed since the last result.
@@ -67,7 +77,7 @@ class ResolvingLoadBalancingPolicy : public LoadBalancingPolicy {
   ResolvingLoadBalancingPolicy(
       Args args, TraceFlag* tracer, UniquePtr<char> target_uri,
       ProcessResolverResultCallback process_resolver_result,
-      void* process_resolver_result_user_data);
+      void* process_resolver_result_user_data, grpc_error** error);
 
   virtual const char* name() const override { return "resolving_lb"; }
 
@@ -88,8 +98,10 @@ class ResolvingLoadBalancingPolicy : public LoadBalancingPolicy {
 
   ~ResolvingLoadBalancingPolicy();
 
+  grpc_error* Init(const grpc_channel_args& args);
   void ShutdownLocked() override;
 
+  void StartResolvingLocked();
   void OnResolverError(grpc_error* error);
   void CreateOrUpdateLbPolicyLocked(
       const char* lb_policy_name,
@@ -114,6 +126,7 @@ class ResolvingLoadBalancingPolicy : public LoadBalancingPolicy {
 
   // Resolver and associated state.
   OrphanablePtr<Resolver> resolver_;
+  bool started_resolving_ = false;
   bool previous_resolution_contained_addresses_ = false;
 
   // Child LB policy.

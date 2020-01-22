@@ -39,7 +39,7 @@ class Favorites extends React.Component {
                             <CircularProgress color="secondary" />
                         </div> :
                         this.state.campgrounds.length === 0 ?
-                            <h3 style={title}>You don't have favorites</h3> :
+                            <h3 style={title}>You don't have any favorites</h3> :
                             <Cards campgrounds={this.state.campgrounds} />
                     }
                 </Container>
@@ -47,6 +47,5 @@ class Favorites extends React.Component {
         )
     }
 }
-
 
 export default Favorites;

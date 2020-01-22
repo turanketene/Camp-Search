@@ -61,8 +61,13 @@ class SliceWeakHashTable : public RefCounted<SliceWeakHashTable<T, Size>> {
   }
 
  private:
-  GRPC_ALLOW_CLASS_TO_USE_NON_PUBLIC_NEW
-  GRPC_ALLOW_CLASS_TO_USE_NON_PUBLIC_DELETE
+  // So New() can call our private ctor.
+  template <typename T2, typename... Args>
+  friend T2* New(Args&&... args);
+
+  // So Delete() can call our private dtor.
+  template <typename T2>
+  friend void Delete(T2*);
 
   SliceWeakHashTable() = default;
   ~SliceWeakHashTable() = default;

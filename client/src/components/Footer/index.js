@@ -5,9 +5,8 @@ function Footer() {
 
     return (
         <footer className="footer">
-            <span>Camp Search 2020</span>
+            <span>Camp Search © 2020</span>
         </footer>
     );
 }
-
 export default Footer;
