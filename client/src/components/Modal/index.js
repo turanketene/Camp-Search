@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     },
     title: {
         textAlign: "center",
-        background: "#225c5e",
+        background: "#b67e29",
         color: "white",
         padding: "40px"
     },
