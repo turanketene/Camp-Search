@@ -5,5 +5,4 @@ function Wrapper(props) {
     <main className="wrapper" {...props} />
   );
 }
-
 export default Wrapper;

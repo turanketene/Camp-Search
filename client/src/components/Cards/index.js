@@ -52,7 +52,6 @@ function MapCard(props) {
                 .catch(err => console.error(err));
         }
     }
-
     return (
         <div>
             <Grid container justify="center" spacing={7}>
