@@ -5,7 +5,7 @@
 
 
 ## Description
-This web application is a campsite search app that provides details regarding particular campsites. Coordinating a camping trip can be a particularly onerous process. Although there are a variety of organizational applications Camp Mom seeks to consolidate this functionality, specifically for the planning of a camping trip with friends and family. Camp Mom will enable an admin or “Camp Mom” to initiate a trip and invite multiple friends/family members to assist in the planning process. A user can create to-do list items and packing lists along with scheduling an itinerary.
+This web application is a campsite search app that provides details regarding particular campsites. Coordinating a camping trip can be a particularly onerous process. Although there are a variety of organizational applications Camp Search seeks to consolidate this functionality, specifically for the planning of a camping trip with friends and family. Camp Search will enable an admin or “Camp Search” to initiate a trip and invite multiple friends/family members to assist in the planning process. A user can create to-do list items and packing lists along with scheduling an itinerary.
 
 
 ## Technologies used
