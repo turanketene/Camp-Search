@@ -19,11 +19,11 @@ To successfully utilize this web app, simply put in a national park of interest 
 This app was creating using [`create-react-app`](https://github.com/facebook/create-react-app)
 
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) 
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) |
-- [Material-UI](https://material-ui.com/) |
-- [JavScript](https://www.javascript.com/) |
-- [React](https://reactjs.org/) |
-- [Node.js](https://nodejs.org/en/) |
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) 
+- [Material-UI](https://material-ui.com/) 
+- [JavScript](https://www.javascript.com/) 
+- [React](https://reactjs.org/) 
+- [Node.js](https://nodejs.org/en/) 
 - [Sequelize](https://github.com/sequelize/sequelize)
 - [Firebase Authentication](https://firebase.google.com/products/auth)
 ## APIs used
