@@ -19,11 +19,7 @@ module.exports= function(sequelize, DataTypes) {
         invitedTo: {
             type: DataTypes.TEXT,
             allowNull: true
-        },
-        // favs: {
-        //     type: DataTypes.STRING,
-        //     allowNull: true
-        // }
+        }
     });
 
     return User;
