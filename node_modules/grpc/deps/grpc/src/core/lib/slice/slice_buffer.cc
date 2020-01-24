@@ -103,7 +103,7 @@ uint8_t* grpc_slice_buffer_tiny_add(grpc_slice_buffer* sb, size_t n) {
 
   sb->length += n;
 
-  if (sb->count == 0) goto add_first;
+  if (sb->count == 0) goto add_new;
   back = &sb->slices[sb->count - 1];
   if (back->refcount) goto add_new;
   if ((back->data.inlined.length + n) > sizeof(back->data.inlined.bytes))
@@ -115,7 +115,6 @@ uint8_t* grpc_slice_buffer_tiny_add(grpc_slice_buffer* sb, size_t n) {
 
 add_new:
   maybe_embiggen(sb);
-add_first:
   back = &sb->slices[sb->count];
   sb->count++;
   back->refcount = nullptr;
@@ -263,9 +262,9 @@ void grpc_slice_buffer_move_into(grpc_slice_buffer* src,
   src->length = 0;
 }
 
-template <bool incref>
 static void slice_buffer_move_first_maybe_ref(grpc_slice_buffer* src, size_t n,
-                                              grpc_slice_buffer* dst) {
+                                              grpc_slice_buffer* dst,
+                                              bool incref) {
   GPR_ASSERT(src->length >= n);
   if (src->length == n) {
     grpc_slice_buffer_move_into(src, dst);
@@ -305,12 +304,12 @@ static void slice_buffer_move_first_maybe_ref(grpc_slice_buffer* src, size_t n,
 
 void grpc_slice_buffer_move_first(grpc_slice_buffer* src, size_t n,
                                   grpc_slice_buffer* dst) {
-  slice_buffer_move_first_maybe_ref<true>(src, n, dst);
+  slice_buffer_move_first_maybe_ref(src, n, dst, true);
 }
 
 void grpc_slice_buffer_move_first_no_ref(grpc_slice_buffer* src, size_t n,
                                          grpc_slice_buffer* dst) {
-  slice_buffer_move_first_maybe_ref<false>(src, n, dst);
+  slice_buffer_move_first_maybe_ref(src, n, dst, false);
 }
 
 void grpc_slice_buffer_move_first_into_buffer(grpc_slice_buffer* src, size_t n,

@@ -33,17 +33,11 @@
 #include "src/core/lib/iomgr/closure.h"
 #include "src/core/lib/iomgr/lockfree_event.h"
 
-class GrpcLibraryInitHolder {
- public:
-  GrpcLibraryInitHolder();
-  virtual ~GrpcLibraryInitHolder();
-};
-
-class CFStreamHandle : public GrpcLibraryInitHolder {
+class CFStreamHandle final {
  public:
   static CFStreamHandle* CreateStreamHandle(CFReadStreamRef read_stream,
                                             CFWriteStreamRef write_stream);
-  ~CFStreamHandle() override;
+  ~CFStreamHandle();
   CFStreamHandle(const CFStreamHandle& ref) = delete;
   CFStreamHandle(CFStreamHandle&& ref) = delete;
   CFStreamHandle& operator=(const CFStreamHandle& rhs) = delete;
