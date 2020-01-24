@@ -2,6 +2,10 @@
   "name": "campsearch",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "10.16.0",
+    "npm": "6.9.0"
+  },
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "react": "^16.8.6",
